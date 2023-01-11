@@ -16,7 +16,7 @@
           />
           <div class="postauthor">Jochen Ade</div>
           <div class="text-block-2">|</div>
-          <div class="postdate">{{ post.data.attributes.createdAt }}</div>
+          <div class="postdate">{{ postDate }}</div>
         </div>
       </div>
     </div>
@@ -42,6 +42,9 @@
         <div class="blog-grid">
           <div class="content-left">
             <div class="stick-wrapper">
+              <!-- development -->
+              <h3>{{ currentSection }}</h3>
+
               <div class="social-row">
                 <div class="share-button">
                   <img
@@ -98,10 +101,16 @@ return false;"
                   </div>
                 </div>
               </div>
-              <div id="toc" class="toc"></div>
-              <div class="hide---but-don-t-delete">
-                <a href="#" class="tocitem">This is also a heading<br /></a
-                ><a href="#" class="tocitem">This is a heading<br /></a>
+              <div id="toc" class="toc">
+                <div v-for="(title, index) in articleTitles">
+                  <a
+                    :href="`#${index}`"
+                    class="tocitem"
+                    :class="{ active: index == currentSection }"
+                  >
+                    {{ title.innerHTML }}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -128,15 +137,57 @@ return false;"
 <script setup>
 const { id } = useRoute().params;
 const config = useRuntimeConfig();
+const currentSection = ref("");
+const postDate = ref("");
+const articleTitles = ref("");
 
 const { data: post } = await useFetch(
   `${config.public.baseUrl}/api/posts/${id}?locale=all&populate=*`
 );
+
+onMounted(() => {
+  const getHeadlines = async () => {
+    const res = await fetch(
+      `${config.public.baseUrl}/api/posts/${id}?locale=all&populate=*`
+    );
+    const resdata = await res.json();
+    const data = resdata.data;
+
+    // date formatting
+    const dateString = data.attributes.createdAt;
+    const dateObject = new Date(dateString);
+    const options = { month: "long", day: "numeric", year: "numeric" };
+    postDate.value = dateObject.toLocaleDateString("en-UK", options);
+
+    // parse rich text for headlines
+    const parser = new DOMParser();
+    const parsedDocument = parser.parseFromString(
+      data.attributes.content,
+      "text/html"
+    );
+    articleTitles.value = parsedDocument.querySelectorAll("h2, h3");
+    console.log("hallo", articleTitles.value);
+  };
+  getHeadlines();
+});
 
 // generate sidebar toc
 onMounted(() => {
   const nuxtApp = useNuxtApp();
   const blogNavi = nuxtApp.blogNavi;
   blogNavi();
+
+  // highlight sidebar navi on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      if (entry.intersectionRatio > 0) {
+        currentSection.value = entry.target.getAttribute("id");
+      }
+    });
+  });
+  document.querySelectorAll("h2, h3").forEach((section) => {
+    observer.observe(section);
+  });
 });
 </script>

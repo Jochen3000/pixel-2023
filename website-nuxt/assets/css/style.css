@@ -74,6 +74,11 @@
   font-display: block;
 }
 
+/* smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* github animation cube */
 * {
   box-sizing: border-box;
