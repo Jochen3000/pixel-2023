@@ -6,6 +6,7 @@ const whatsApp = () => {
 
     /* select elements and hide */
     const isTyping = document.querySelector('.contact-tap');
+    const timeDisplay = document.querySelector('.time-display');
     const messagesComputer = document.querySelectorAll('.message-computer');
     const messagesUser = document.querySelectorAll('.message-user');
     const textEntryName = document.querySelector('.text-entry-name');
@@ -28,7 +29,9 @@ const whatsApp = () => {
         let hours = d.getHours();
         let minutes = d.getMinutes()
         let minutesString = minutes <= 9 ? (`0${minutes}`) : (`${minutes}`);
-        document.querySelector('.time-display').innerHTML = `${hours}:${minutesString}`;
+        if (timeDisplay) {
+            timeDisplay.innerHTML = `${hours}:${minutesString}`;
+        }
     }
 
     isTyping.classList.add('hide');
