@@ -24,6 +24,7 @@
           <PostSidebar
             :articleTitles="articleTitles"
             :currentSection="currentSection"
+            :post="post"
           />
           <!-- post body -->
           <div id="content" class="content-right_blog">

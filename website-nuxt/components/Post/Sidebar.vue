@@ -10,14 +10,12 @@
             class="social-share-icon"
           />
           <div class="social-share-code w-embed">
-            <!-- <a
+            <a
               class="w-inline-block social-share-code"
-              href="https://www.facebook.com/sharer/sharer.php?u=&amp;t="
+              :href="`https://www.facebook.com/share.php?u=${sharingLink}`"
               title="Share on Facebook"
               target="_blank"
-              onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL), 'targetWindow', 'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); 
-return false;"
-            ></a> -->
+            ></a>
           </div>
         </div>
         <div class="share-button">
@@ -30,10 +28,9 @@ return false;"
           <div class="social-share-code w-embed">
             <a
               class="w-inline-block social-share-code"
-              href="http://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title=&amp;summary=&amp;source="
+              :href="`https://www.linkedin.com/sharing/share-offsite/?url=${sharingLink}`"
               target="_blank"
               title="Share on LinkedIn"
-              onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL), 'targetWindow', 'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600'); return false;"
             >
             </a>
           </div>
@@ -46,14 +43,13 @@ return false;"
             class="social-share-icon"
           />
           <div class="social-share-code w-embed">
-            <!-- <a
+            <a
               class="w-inline-block social-share-code"
-              href="https://twitter.com/intent/tweet?"
+              :href="`http://twitter.com/share?&url=${sharingLink}&text=${sharingTitle}`"
               target="_blank"
               alt="Tweet This"
               title="Tweet"
-              onclick="window.open('https://twitter.com/intent/tweet?text=%20Check this out! ' + encodeURIComponent(document.URL) + '&amp;t=' + encodeURIComponent(document.URL), 'targetWindow', 'toolbar=no,location=0,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=250'); return false;"
-            ></a> -->
+            ></a>
           </div>
         </div>
       </div>
@@ -64,16 +60,34 @@ return false;"
             class="tocitem"
             :class="{ active: index == currentSection }"
           >
-            {{ title.innerHTML }}
+            <!-- remove &amp; from html and render title -->
+            {{ title.innerHTML.replace(/amp;/g, "") }}
           </a>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <script setup>
-const { articleTitles, currentSection } = defineProps([
+const sharingLink = ref("");
+const sharingTitle = ref("");
+
+// get environment variable
+const config = useRuntimeConfig();
+const myBaseUrl = config.public.baseUrl;
+
+// get full path
+const myPath = useRoute().fullPath;
+
+// get props
+const { articleTitles, currentSection, post } = defineProps([
   "articleTitles",
   "currentSection",
+  "post",
 ]);
+
+// social sharing links
+sharingLink.value = myBaseUrl + myPath;
+sharingTitle.value = encodeURIComponent(post.data.attributes.title);
 </script>
