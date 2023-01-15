@@ -23,7 +23,7 @@
         <div class="whatsapp-inner">
           <div class="phone-top">
             <div class="time">
-              <div class="time-display">9:41</div>
+              <div class="time-display">{{ currentTime() }}</div>
             </div>
             <div class="signal-battery">
               <img
@@ -60,7 +60,7 @@
                     <div class="message-incoming-content">
                       Hi 👋 are you interested in a collaboration?
                     </div>
-                    <div class="message-time">11:40</div>
+                    <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
                     <img
@@ -83,7 +83,7 @@
                     <div class="message-incoming-content">
                       What is your name?
                     </div>
-                    <div class="message-time">11:40</div>
+                    <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
                     <img
@@ -105,7 +105,7 @@
                   <div class="message-container-inner">
                     <div class="message-content">text-entry-name</div>
                     <div class="message-time-status">
-                      <div class="message-time">10:10</div>
+                      <div class="message-time">{{ currentTime() }}</div>
                       <img
                         src="images/whatsapp-message-ok.svg"
                         loading="lazy"
@@ -133,7 +133,7 @@
                 <div class="message-comp-inner">
                   <div class="message-container-incoming">
                     <div class="message-incoming-content">How can I help?</div>
-                    <div class="message-time">11:40</div>
+                    <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
                     <img
@@ -155,7 +155,7 @@
                   <div class="message-container-inner">
                     <div class="message-content">text-entry-message</div>
                     <div class="message-time-status">
-                      <div class="message-time">10:10</div>
+                      <div class="message-time">{{ currentTime() }}</div>
                       <img
                         src="images/whatsapp-message-ok.svg"
                         loading="lazy"
@@ -185,7 +185,7 @@
                     <div class="message-incoming-content">
                       Cool 🙂 How can I reach you?
                     </div>
-                    <div class="message-time">11:40</div>
+                    <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
                     <img
@@ -207,7 +207,7 @@
                   <div class="message-container-inner">
                     <div class="message-content">text-entry-contact</div>
                     <div class="message-time-status">
-                      <div class="message-time">10:10</div>
+                      <div class="message-time">{{ currentTime() }}</div>
                       <img
                         src="images/whatsapp-message-ok.svg"
                         loading="lazy"
@@ -237,7 +237,7 @@
                     <div class="message-incoming-content">
                       Danke, ich melde mich!
                     </div>
-                    <div class="message-time">11:40</div>
+                    <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
                     <img
@@ -329,6 +329,15 @@
 </template>
 
 <script setup>
+/* display time */
+function currentTime() {
+  let d = new Date();
+  let hours = d.getHours();
+  let minutes = d.getMinutes();
+  let minutesString = minutes <= 9 ? `0${minutes}` : `${minutes}`;
+  return `${hours}:${minutesString}`;
+}
+
 onMounted(() => {
   const nuxtApp = useNuxtApp();
   const whatsApp = nuxtApp.whatsApp;

@@ -19,21 +19,6 @@ const whatsApp = () => {
     const chatContainer = document.querySelector('.chat-container');
     const chatContainerInner = document.querySelector('.chat-container-inner');
 
-
-    /* display time in top bar */
-    currentTime()
-    setInterval(currentTime, 30000);
-
-    function currentTime() {
-        let d = new Date();
-        let hours = d.getHours();
-        let minutes = d.getMinutes()
-        let minutesString = minutes <= 9 ? (`0${minutes}`) : (`${minutes}`);
-        if (timeDisplay) {
-            timeDisplay.innerHTML = `${hours}:${minutesString}`;
-        }
-    }
-
     isTyping.classList.add('hide');
     messagesUser[0].classList.add('hide');
     messagesUser[1].classList.add('hide');
