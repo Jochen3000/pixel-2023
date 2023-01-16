@@ -2,32 +2,26 @@
   <div class="strapline">blog</div>
   <h2 class="center">Latest articles</h2>
   <div class="collection-list-wrapper w-dyn-list">
-    <div role="list" class="collection-list w-dyn-items">
+    <div v-if="data?.length" role="list" class="collection-list w-dyn-items">
       <div
-        v-for="post in posts.data.slice(0, 1)"
+        v-for="post in data.slice(0, 1)"
+        v-bind:key="post._id"
         role="listitem"
         class="collection-item w-dyn-item"
       >
         <NuxtLink
-          :to="`/blog/${post.id}`"
+          :to="`/blog/${post._id}`"
           class="teaserlinkblock w-inline-block"
         >
           <div
             data-w-id="f50e9285-f377-ea0d-a831-e479de4554a9"
             class="teaser-big"
           >
-            <div
-              class="teasertextblock"
-              style="
-                transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)
-                  rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-                transform-style: preserve-3d;
-              "
-            >
-              <div class="strapline">{{ post.attributes.description }}</div>
-              <h3 class="headingteaser">{{ post.attributes.title }}</h3>
+            <div class="teasertextblock">
+              <div class="strapline">{{ post.category }}</div>
+              <h3 class="headingteaser">{{ post.title }}</h3>
               <p class="postsummary">
-                {{ post.attributes.teaser }}
+                {{ post.teaser }}
               </p>
               <div class="div-block">
                 <div class="teaser-text-link">Artikel lesen</div>
@@ -38,11 +32,6 @@
                   height="14"
                   alt="arrow right"
                   class="arrowlink"
-                  style="
-                    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)
-                      rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-                    transform-style: preserve-3d;
-                  "
                 />
               </div>
             </div>
@@ -54,11 +43,6 @@
                 src="/images/teaser-mvp.svg"
                 alt=""
                 class="bigteaserimage"
-                style="
-                  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1)
-                    rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-                  transform-style: preserve-3d;
-                "
               />
             </div>
           </div>
@@ -67,14 +51,14 @@
     </div>
   </div>
   <div class="teaserblockcontainer">
-    <div v-for="post in posts.data.slice(1, 3)" class="smallteaser">
+    <div v-for="post in data.slice(1, 3)" class="smallteaser">
       <NuxtLink :to="`/blog/${post.id}`">
         <div class="teaserheadline"></div>
         <h3 class="h3-small-teaser">
-          {{ post.attributes.title }}
+          {{ post.title }}
         </h3>
         <p class="para-teaser-small">
-          {{ post.attributes.teaser }}
+          {{ post.teaser }}
         </p>
         <div class="teaser-small-more">
           <div class="teaser-text-link">Read article</div>
@@ -95,7 +79,6 @@
 <script setup>
 const config = useRuntimeConfig();
 
-const { data: posts } = await useFetch(
-  `${config.public.baseUrl}/api/posts?locale=all&populate=*&sort=createdAt%3Adesc`
-);
+const query = groq`*[_type == "post"]`;
+const { data } = useSanityQuery(query);
 </script>
