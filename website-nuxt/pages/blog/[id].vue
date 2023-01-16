@@ -53,6 +53,11 @@ const currentSection = ref("");
 const postDate = ref("");
 const articleTitles = ref("");
 
+// use custom layout for soft scroll
+definePageMeta({
+  layout: "custom",
+});
+
 // fetch data from strapi
 const { data: post } = await useFetch(
   `${config.public.baseUrl}/api/posts/${id}?locale=all&populate=*`

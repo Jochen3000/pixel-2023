@@ -77,7 +77,7 @@ const sharingTitle = ref("");
 const config = useRuntimeConfig();
 const myBaseUrl = config.public.baseUrl;
 
-// get full path
+// get path
 const myPath = useRoute().fullPath;
 
 // get props
