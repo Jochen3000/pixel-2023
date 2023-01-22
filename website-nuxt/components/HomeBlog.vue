@@ -40,7 +40,7 @@
                 height="495"
                 loading="lazy"
                 width="944"
-                src="/images/teaser-mvp.svg"
+                :src="post.imageUrl"
                 alt=""
                 class="bigteaserimage"
               />
@@ -52,7 +52,7 @@
   </div>
   <div class="teaserblockcontainer">
     <div v-for="post in data.slice(1, 3)" class="smallteaser">
-      <NuxtLink :to="`/blog/${post.id}`">
+      <NuxtLink :to="`/blog/${post.slug.current}`">
         <div class="teaserheadline"></div>
         <h3 class="h3-small-teaser">
           {{ post.title }}
@@ -79,6 +79,13 @@
 <script setup>
 const config = useRuntimeConfig();
 
-const query = groq`*[_type == "post"]`;
+const query = groq`*[_type == 'post']{
+  title,
+  teaser,
+  category,
+  slug,
+  id,
+  "imageUrl": image.asset->url
+}`;
 const { data } = useSanityQuery(query);
 </script>

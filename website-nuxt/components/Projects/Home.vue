@@ -11,7 +11,7 @@
         <div :class="{ screenstartpage: showProjectOverview }">
           <div class="favouitesitesblock">
             <ProjectsDisplay
-              v-for="(project, index) in projects.data"
+              v-for="(project, index) in data"
               :project="project"
               :index="index"
               :showProjectOverview="showProjectOverview"
@@ -42,7 +42,7 @@
       </p>
     </div>
     <ProjectsDescription
-      v-for="(project, index) in projects.data"
+      v-for="(project, index) in data"
       :project="project"
       :index="index"
       :showProjectOverview="showProjectOverview"
@@ -60,9 +60,14 @@ const selectedItemIndex = ref(null);
 const isLoading = ref(false);
 const isLoadingProgress = ref(false);
 
-const { data: projects } = await useFetch(
-  `${config.public.baseUrl}/api/projects?locale=all&populate=*`
-);
+// get data from sanity
+const query = groq`*[_type == "project"]{
+  title,
+  description,
+  "imageSmall": imagepreview.asset->url,
+  "imageUrl": image.asset->url
+}`;
+const { data } = useSanityQuery(query);
 
 const showDetails = (index) => {
   showProjectOverview.value = false;

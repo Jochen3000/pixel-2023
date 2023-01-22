@@ -1,5 +1,6 @@
 // schemas/index.js
-import pet from './pet'
+import project from './project'
 import post from './post'
+import author from './author'
 
-export const schemaTypes = [pet, post]
+export const schemaTypes = [project, post, author]

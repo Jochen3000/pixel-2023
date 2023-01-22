@@ -2,12 +2,12 @@
   <div>
     <div class="project" v-if="index === selectedItemIndex">
       <div class="teaserheadline">
-        <h3 class="h3-teaser">{{ project.attributes.title }}</h3>
+        <h3 class="h3-teaser">{{ project.title }}</h3>
       </div>
       <p class="paragraph-2">
-        {{ project.attributes.description }}
+        {{ project.description }}
       </p>
-      <div class="project-tags">
+      <!-- <div class="project-tags">
         <div class="tag" v-if="project.attributes.tag1">
           <img
             src="images/tag-icon.svg"
@@ -35,8 +35,8 @@
           />
           <div class="text-block-5">{{ project.attributes.tag3 }}</div>
         </div>
-      </div>
-      <a :href="project.attributes.weburl" class="view-project w-inline-block"
+      </div> -->
+      <!-- <a :href="project.attributes.weburl" class="view-project w-inline-block"
         ><img
           src="images/link-chevron.svg"
           loading="lazy"
@@ -44,7 +44,7 @@
           class="link-chevron"
         />
         <div class="linktext">{{ project.attributes.title }}</div>
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

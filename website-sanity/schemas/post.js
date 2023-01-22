@@ -1,3 +1,5 @@
+import author from "./author"
+
 const post = {
     title: 'post',
     name: 'post',
@@ -14,6 +16,12 @@ const post = {
             type: 'string',
         },
         {
+            name: 'author',
+            title: 'Author',
+            type: 'reference',
+            to: [{ type: 'author' }]
+        },
+        {
             name: 'teaser',
             title: 'teaser',
             type: 'text',
@@ -26,18 +34,29 @@ const post = {
         },
         {
             name: 'body',
-            title: 'Body',
             type: 'array',
+            title: 'body',
             of: [
                 {
-                    type: 'block',
+                    type: 'block'
                 },
-            ],
+                {
+                    type: 'image'
+                }
+            ]
         },
         {
-            name: 'slug',
             title: 'Slug',
+            name: 'slug',
             type: 'slug',
+            options: {
+                source: 'title',
+                maxLength: 200, // will be ignored if slugify is set
+                slugify: input => input
+                    .toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .slice(0, 200)
+            }
         },
         {
             name: 'publishedAt',

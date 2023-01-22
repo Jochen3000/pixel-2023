@@ -5,25 +5,15 @@
     v-on:click="showDetails(index)"
   >
     <img
-      v-if="project.attributes.preview_image.data"
-      :src="
-        config.public.baseUrl +
-        project.attributes.preview_image.data.attributes.url
-      "
+      :src="project.imageSmall"
       loading="lazy"
       sizes="(max-width: 479px) 39vw, 160px"
       alt=""
     />
-    <div class="text-block-3">{{ project.attributes.title }}</div>
+    <div class="text-block-3">{{ project.title }}</div>
   </div>
   <div class="project-container" v-if="index === selectedItemIndex">
-    <img
-      v-if="project.attributes.image.data"
-      :src="
-        config.public.baseUrl + project.attributes.image.data.attributes.url
-      "
-      loading="lazy"
-    />
+    <img :src="project.imageUrl" />
   </div>
 </template>
 
