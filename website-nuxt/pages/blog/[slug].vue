@@ -1,10 +1,10 @@
 <template>
   <div class="page-container w-container">
     <!-- <PostHeader :post="post" :postDate="postDate" /> -->
-    <h2>{{ data.title }}</h2>
+    <h2>{{ data?.title }}</h2>
     <div class="contentsection wf-section">
       <div class="containerinner blog">
-        <img :src="data.imageUrl" />
+        <img :src="data?.imageUrl" />
       </div>
     </div>
     <div class="blogcontent">

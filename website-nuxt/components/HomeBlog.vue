@@ -10,7 +10,7 @@
         class="collection-item w-dyn-item"
       >
         <NuxtLink
-          :to="`/blog/${post._id}`"
+          :to="`/blog/${post.slug.current}`"
           class="teaserlinkblock w-inline-block"
         >
           <div
