@@ -1,10 +1,10 @@
 <template>
   <div class="articlehead wf-section">
     <div class="containerinner blog">
-      <div class="subtitle">{{ post.data.attributes.description }}</div>
-      <h1 class="center">{{ post.data.attributes.title }}</h1>
+      <div class="subtitle">{{ post?.category }}</div>
+      <h1 class="center">{{ post?.title }}</h1>
       <p class="center">
-        {{ post.data.attributes.teaser }}
+        {{ post?.teaser }}
       </p>
       <div class="postmeta">
         <img

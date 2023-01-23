@@ -1,7 +1,6 @@
 <template>
   <div class="page-container w-container">
-    <!-- <PostHeader :post="post" :postDate="postDate" /> -->
-    <h2>{{ data?.title }}</h2>
+    <PostHeader :post="data" :postDate="postDate" />
     <div class="contentsection wf-section">
       <div class="containerinner blog">
         <img :src="data?.imageUrl" />
@@ -35,58 +34,68 @@
 </template>
 
 <script setup>
-const { slug } = useRoute().params;
+const postDate = ref("");
+const currentSection = ref("");
+const articleTitles = ref("");
 
+const { slug } = useRoute().params;
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   teaser,
   category,
+  publishedAt,
   "imageUrl": image.asset->url
 }`;
 const { data } = useSanityQuery(query, {
   slug: slug,
 });
 
+// another request for date with usesyncdata
+async function getData() {
+  const sanity = useSanity();
+  const { data } = await useAsyncData("post", () =>
+    sanity.fetch(query, {
+      slug: slug,
+    })
+  );
+  const dateString = data.value.publishedAt;
+  const dateObject = new Date(dateString);
+  const options = { month: "long", day: "numeric", year: "numeric" };
+  postDate.value = dateObject.toLocaleDateString("en-UK", options);
+}
+getData();
+
 // DAS ALTE STRAPI SCRIPT
 
-// const { id } = useRoute().params;
-// const config = useRuntimeConfig();
-// const currentSection = ref("");
-// const postDate = ref("");
-// const articleTitles = ref("");
-// // fetch data from strapi
-// const { data: post } = await useFetch(
-//   `${config.public.baseUrl}/api/posts/${id}?locale=all&populate=*`
-// );
 // onMounted(() => {
 //   // fetch additional data
 //   const getHeadlines = async () => {
-//     const res = await fetch(
-//       `${config.public.baseUrl}/api/posts/${id}?locale=all&populate=*`
-//     );
+//     const res = await fetch(URL);
 //     const resdata = await res.json();
 //     const data = resdata.data;
-//     // date formatting
-//     const dateString = data.attributes.createdAt;
-//     const dateObject = new Date(dateString);
-//     const options = { month: "long", day: "numeric", year: "numeric" };
-//     postDate.value = dateObject.toLocaleDateString("en-UK", options);
-//     // add ids to headlines
-//     document
-//       .getElementById("content")
-//       .querySelectorAll("h2,h3")
-//       .forEach(function (heading, i) {
-//         heading.setAttribute("id", i);
-//       });
-//     // parse rich text for headlines
-//     const parser = new DOMParser();
-//     const parsedDocument = parser.parseFromString(
-//       data.attributes.content,
-//       "text/html"
-//     );
-//     articleTitles.value = parsedDocument.querySelectorAll("h2, h3");
+//     console.log(data);
+// // date formatting
+// const dateString = data.value.publishedAt;
+// const dateObject = new Date(dateString);
+// const options = { month: "long", day: "numeric", year: "numeric" };
+// postDate.value = dateObject.toLocaleDateString("en-UK", options);
+// // add ids to headlines
+// document
+//   .getElementById("content")
+//   .querySelectorAll("h2,h3")
+//   .forEach(function (heading, i) {
+//     heading.setAttribute("id", i);
+//   });
+// // parse rich text for headlines
+// const parser = new DOMParser();
+// const parsedDocument = parser.parseFromString(
+//   data.attributes.content,
+//   "text/html"
+// );
+// articleTitles.value = parsedDocument.querySelectorAll("h2, h3");
 //   };
 //   getHeadlines();
+
 //   // highlight sidebar navi on scroll
 //   const observer = new IntersectionObserver((entries) => {
 //     entries.forEach((entry) => {

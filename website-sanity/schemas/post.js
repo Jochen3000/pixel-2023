@@ -61,7 +61,10 @@ const post = {
         {
             name: 'publishedAt',
             title: 'Published at',
-            type: 'datetime',
+            type: 'date',
+            options: {
+                dateFormat: 'DD MMM YYYY',
+            }
         },
     ],
     preview: {
