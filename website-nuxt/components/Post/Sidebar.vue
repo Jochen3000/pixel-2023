@@ -70,8 +70,26 @@
 </template>
 
 <script setup>
+const currentSection = ref("");
+const articleTitles = ref("");
 const sharingLink = ref("");
 const sharingTitle = ref("");
+
+// generate sidebar navi
+onMounted(() => {
+  // add ids to headlines
+  document
+    .getElementById("content")
+    .querySelectorAll("h2,h3")
+    .forEach(function (heading, i) {
+      heading.setAttribute("id", i);
+    });
+
+  // get headlines and add to array
+  articleTitles.value = document
+    .getElementById("content")
+    .querySelectorAll("h2,h3");
+});
 
 // get environment variable
 const config = useRuntimeConfig();
@@ -81,13 +99,9 @@ const myBaseUrl = config.public.baseUrl;
 const myPath = useRoute().fullPath;
 
 // get props
-const { articleTitles, currentSection, post } = defineProps([
-  "articleTitles",
-  "currentSection",
-  "post",
-]);
+const { post } = defineProps(["post"]);
 
 // social sharing links
 sharingLink.value = myBaseUrl + myPath;
-sharingTitle.value = encodeURIComponent(post.data.attributes.title);
+sharingTitle.value = encodeURIComponent(post?.title);
 </script>

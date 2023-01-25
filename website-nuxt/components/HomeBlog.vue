@@ -2,9 +2,9 @@
   <div class="strapline">blog</div>
   <h2 class="center">Latest articles</h2>
   <div class="collection-list-wrapper w-dyn-list">
-    <div v-if="data?.length" role="list" class="collection-list w-dyn-items">
+    <div role="list" class="collection-list w-dyn-items">
       <div
-        v-for="post in data.slice(0, 1)"
+        v-for="post in data?.slice(0, 1)"
         v-bind:key="post._id"
         role="listitem"
         class="collection-item w-dyn-item"
