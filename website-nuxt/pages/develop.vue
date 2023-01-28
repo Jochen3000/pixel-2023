@@ -3,13 +3,4 @@
   <p>lorem ipsum</p>
 </template>
 
-<script setup>
-useHead({
-  script: [
-    {
-      src: "https://domain/path/some-filename.js",
-      body: true,
-    },
-  ],
-});
-</script>
+<script setup></script>
