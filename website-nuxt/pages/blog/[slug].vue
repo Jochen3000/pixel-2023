@@ -66,4 +66,14 @@ async function getPubDate() {
   postDate.value = dateObject.toLocaleDateString("en-UK", options);
 }
 getPubDate();
+
+// hack for sidebar
+useHead({
+  script: [
+    {
+      src: "https://www.pixel.berlin/custom.js",
+      body: true,
+    },
+  ],
+});
 </script>

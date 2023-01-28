@@ -5,7 +5,7 @@
       <div class="containerinner content">
         <HomeBlog />
         <div id="projects" class="projectsblock">
-          <ProjectsHome />
+          <!-- <ProjectsHome /> -->
           <HomeWhatsApp />
         </div>
       </div>
