@@ -23,6 +23,7 @@
 
 <script setup>
 import ImageSerializer from "~~/components/ImageSerializer.vue";
+import FigureSerializer from "~~/components/FigureSerializer.vue";
 
 const postDate = ref("");
 
@@ -44,6 +45,7 @@ const { data } = useSanityQuery(query, {
 const serializers = {
   types: {
     image: ImageSerializer,
+    pictureTitled: FigureSerializer,
   },
 };
 

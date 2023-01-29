@@ -42,7 +42,10 @@ const post = {
                 },
                 {
                     type: 'image'
-                }
+                },
+                {
+                    type: 'pictureTitled'
+                },
             ]
         },
         {

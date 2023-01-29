@@ -929,6 +929,7 @@ figcaption {
 
 .content-right_blog {
   display: block;
+  background: lightgrey;
   max-width: 100%;
   margin-right: auto;
   -webkit-box-orient: vertical;
