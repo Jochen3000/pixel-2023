@@ -24,11 +24,6 @@
 <script setup>
 import ImageSerializer from "~~/components/ImageSerializer.vue";
 
-// workaround to deal with https://github.com/nuxt/nuxt.js/issues/13471
-definePageMeta({
-  pageTransition: false,
-});
-
 const postDate = ref("");
 
 // fetch data
@@ -67,11 +62,11 @@ async function getPubDate() {
 }
 getPubDate();
 
-// hack for sidebar js
+// custom js to generate sidebar toc
 useHead({
   script: [
     {
-      src: "http://localhost:3000/custom.js",
+      src: "/custom.js",
       body: true,
     },
   ],

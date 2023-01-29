@@ -53,18 +53,7 @@
           </div>
         </div>
       </div>
-      <div id="toc" class="toc">
-        <div v-for="(title, index) in articleTitles">
-          <a
-            :href="`#${index}`"
-            class="tocitem"
-            :class="{ active: index == currentSection }"
-          >
-            <!-- remove &amp; from html and render title -->
-            {{ title.innerHTML.replace(/amp;/g, "") }}
-          </a>
-        </div>
-      </div>
+      <div id="toc" class="toc"></div>
     </div>
   </div>
 </template>
