@@ -626,7 +626,6 @@ figcaption {
 
 .bigteaserimage {
   display: block;
-  overflow: visible;
   width: 100%;
   height: auto;
   border-radius: 40px;
@@ -1737,7 +1736,6 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: visible;
   width: 100%;
   height: 400px;
   -webkit-box-orient: vertical;
@@ -1815,10 +1813,6 @@ figcaption {
   grid-template-columns: auto 375px;
   -ms-grid-rows: auto;
   grid-template-rows: auto;
-}
-
-.podojo-screen {
-  overflow: visible;
 }
 
 .safari {
@@ -2011,7 +2005,6 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  overflow: visible;
   width: 100%;
   height: 400px;
   -webkit-box-orient: vertical;

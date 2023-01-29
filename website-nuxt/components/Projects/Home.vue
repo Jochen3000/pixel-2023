@@ -17,7 +17,6 @@
               :showProjectOverview="showProjectOverview"
               :selectedItemIndex="selectedItemIndex"
               :showDetails="showDetails"
-              class="favouriteproject"
             />
           </div>
         </div>

@@ -132,7 +132,6 @@ html[data-w-dynpage] [data-w-cloak] {
   z-index: auto;
   display: block;
   visibility: visible;
-  overflow: visible;
   overflow-x: visible;
   overflow-y: visible;
   box-sizing: border-box;
@@ -183,33 +182,6 @@ html[data-w-dynpage] [data-w-cloak] {
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
-}
-
-.w-webflow-badge {
-  position: fixed !important;
-  display: inline-block !important;
-  visibility: visible !important;
-  z-index: 2147483647 !important;
-  top: auto !important;
-  right: 12px !important;
-  bottom: 12px !important;
-  left: auto !important;
-  color: #AAADB0 !important;
-  background-color: #fff !important;
-  border-radius: 3px !important;
-  padding: 6px 8px 6px 6px !important;
-  font-size: 12px !important;
-  opacity: 1 !important;
-  line-height: 14px !important;
-  text-decoration: none !important;
-  transform: none !important;
-  margin: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  overflow: visible !important;
-  white-space: nowrap;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
 }
 
 .w-webflow-badge>img {
@@ -1924,18 +1896,6 @@ textarea.w-select {
 .w-nav-menu {
   position: relative;
   float: right;
-}
-
-[data-nav-menu-open] {
-  display: block !important;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #C8C8C8;
-  text-align: center;
-  overflow: visible;
-  min-width: 200px;
 }
 
 .w--nav-link-open {
