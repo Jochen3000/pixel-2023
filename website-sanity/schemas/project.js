@@ -4,6 +4,17 @@ export default {
     title: 'project',
     fields: [
         {
+            title: "Language",
+            type: "string",
+            name: "language",
+            options: {
+                list: [
+                    { title: 'English', value: 'en' },
+                    { title: 'German', value: 'de' }
+                ]
+            }
+        },
+        {
             name: 'title',
             title: 'title',
             type: 'string',
