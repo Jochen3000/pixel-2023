@@ -34,9 +34,9 @@ export default {
             }
         },
         {
-            name: 'publishedAt',
-            title: 'Published at',
-            type: 'datetime',
+            name: "external",
+            type: "string",
+            title: "URL",
         },
     ],
 }

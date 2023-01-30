@@ -63,6 +63,8 @@ const isLoadingProgress = ref(false);
 const query = groq`*[_type == "project"]{
   title,
   description,
+  tags,
+  external,
   "imageSmall": imagepreview.asset->url,
   "imageUrl": image.asset->url
 }`;

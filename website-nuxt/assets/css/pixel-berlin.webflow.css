@@ -1759,6 +1759,12 @@ figcaption {
   box-shadow: 3px 3px 8px 4px rgba(0, 0, 0, 0.1);
 }
 
+.project-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .projectdescription {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1794,6 +1800,7 @@ figcaption {
   -webkit-flex: 0px;
   -ms-flex: 0px;
   flex: 0px;
+  background-color: white;
 }
 
 .projectsblockcontainer {
@@ -1834,7 +1841,7 @@ figcaption {
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
   -ms-flex-pack: start;
-  justify-content: flex-start;
+  justify-content: space-between;
   grid-column-gap: 12px;
   grid-row-gap: 12px;
 }
@@ -1843,7 +1850,16 @@ figcaption {
   cursor: pointer;
 }
 
+.favouriteproject img {
+  height: 150px;
+  width: 200px;
+  border-radius: 5px;
+  border: 0.712644px solid #E7E8F1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .text-block-3 {
+  padding-top: 10px;
   font-size: 12px;
   text-align: center;
 }
@@ -1959,6 +1975,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 60px;
   padding-top: 60px;
   padding-bottom: 60px;
   -webkit-box-orient: vertical;

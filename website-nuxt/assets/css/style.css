@@ -342,10 +342,6 @@ figcaption {
   margin-top: 60px;
 }
 
-.favouriteproject {
-  max-width: 30%;
-}
-
 @-webkit-keyframes load {
   0% {
     transform: scale(0, 1);
