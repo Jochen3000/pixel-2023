@@ -1,6 +1,7 @@
 <template>
   <div class="strapline">blog</div>
-  <h2 class="center">Latest articles</h2>
+  <h2 class="center" v-if="$route.path === '/en'">Latest articles</h2>
+  <h2 class="center" v-else>Die neuesten Artikel</h2>
   <div class="collection-list-wrapper w-dyn-list">
     <div role="list" class="collection-list w-dyn-items">
       <div
@@ -78,6 +79,7 @@
 
 <script setup>
 const config = useRuntimeConfig();
+const route = useRoute();
 
 const query = groq`*[_type == 'post']{
   title,

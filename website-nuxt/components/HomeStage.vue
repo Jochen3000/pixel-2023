@@ -4,10 +4,17 @@
       <h1 class="heading-2">
         pixel.berlin<br />web development.<br />frontend &amp; prototypes.
       </h1>
-      <p class="paragraph">
+
+      <p class="paragraph" v-if="$route.path === '/en'">
         Crafting prototypes, websites and apps. Moving from idea to product with
         a focus on user experience.
       </p>
+      <p class="paragraph" v-else>
+        Die pixel.berlin Werkstatt für Web-Entwicklung ist die richtige
+        Anlaufstelle für professionelle Anwendungen, bei denen das
+        Benutzererlebnis immer im Vordergrund steht.
+      </p>
+
       <div class="logocontainer">
         <img
           src="images/css.svg"
@@ -76,3 +83,7 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const route = useRoute();
+</script>

@@ -1,22 +1,27 @@
 <template>
   <div class="contact-block">
-    <div class="strapline">Let&#x27;s talk</div>
-    <h2 class="center">Get in touch</h2>
+    <div class="strapline" v-if="$route.path === '/en'">contact</div>
+    <div class="strapline" v-else>Kontakt</div>
+    <h2 class="center" v-if="$route.path === '/en'">Get in touch</h2>
+    <h2 class="center" v-else>Kontakt aufnehmen</h2>
     <div class="contacts-block-container">
-      <div
-        id="w-node-_7c221cb0-9b56-ef97-66fd-bf544eeacb05-8bb3785f"
-        class="about"
-      >
+      <div class="about" v-if="$route.path === '/en'">
         <p>
           👋 Hello, I&#x27;m Jochen Ade<br />👀 I develop prototypes, digital
           products and web applications. <br />🌱 I use different technologies
           like HTML5, CSS/SASS, Javascript, JS Frameworks (React, Next.js) and
           tools like Figma, Wordpress, Make, Bubble, and Webflow.<br />💞️ I
           would be happy to speak about your project or idea.<br />📫 Please use
-          my chat application to get in touch
-          <a href="https://emojipedia.org/backhand-index-pointing-right/"
-            >👉
-          </a>
+          my chat application to get in touch 👉
+        </p>
+      </div>
+      <div class="about" v-else>
+        <p>
+          👋 Hallo, ich bin Jochen Ade 👀 Ich entwickle Prototypen, Websites und
+          Apps. 🌱 Dabei nutze ich unterschiedliche Technologien wie HTML/CSS,
+          JS, React, Vue.js und Tools wie Figma, Wordpress und Webflow. 💞️ Über
+          eine Kontaktaufnahme würde ich mich freuen! 📫 Bitte meine Chat
+          Applikation benutzen 👉
         </p>
       </div>
       <div class="whatsapp-container">
@@ -329,6 +334,8 @@
 </template>
 
 <script setup>
+const route = useRoute();
+
 /* display time */
 function currentTime() {
   let d = new Date();

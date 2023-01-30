@@ -1,6 +1,7 @@
 <template>
   <div class="strapline">showcase</div>
-  <h2 class="center">Projekte</h2>
+  <h2 class="center" v-if="$route.path === '/en'">Projects</h2>
+  <h2 class="center" v-else>Projekte</h2>
 
   <div class="projectsblockcontainer">
     <div class="projectsdisplay">
@@ -29,16 +30,30 @@
       </div>
     </div>
     <div class="project-intro" v-if="showProjectOverview === true">
-      <div class="teaserheadline">
-        <h3 class="h3-teaser">
-          My project portfolio includes websites and applications for larger
-          companies, start-ups and non-profit organizations.
-        </h3>
+      <div v-if="$route.path === '/en'">
+        <div class="teaserheadline">
+          <h3 class="h3-teaser">
+            My project portfolio includes websites and applications for larger
+            companies, start-ups and non-profit organizations.
+          </h3>
+        </div>
+        <p>
+          Depending on the task, different tools and technologies are used. Here
+          is a selection.
+        </p>
       </div>
-      <p>
-        Depending on the task, different tools and technologies are used. Here
-        is a selection.
-      </p>
+      <div v-else>
+        <div class="teaserheadline">
+          <h3 class="h3-teaser">
+            Mein Projekt-Portfolio umfasst Websites und Applikationen für
+            grössere Unternehmen, Start-ups und gemeinnützige Organisationen.
+          </h3>
+        </div>
+        <p>
+          Dabei kommen je nach Aufgabenstellung unterschiedliche Tools und
+          Technologien zum Einsatz. Hier eine Auswahl.
+        </p>
+      </div>
     </div>
     <ProjectsDescription
       v-for="(project, index) in data"
@@ -58,6 +73,8 @@ const showProjectOverview = ref(true);
 const selectedItemIndex = ref(null);
 const isLoading = ref(false);
 const isLoadingProgress = ref(false);
+
+const route = useRoute();
 
 // get data from sanity
 const query = groq`*[_type == "project"]{
