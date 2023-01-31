@@ -74,18 +74,23 @@ const selectedItemIndex = ref(null);
 const isLoading = ref(false);
 const isLoadingProgress = ref(false);
 
+// get locale
 const route = useRoute();
+const locale = route.path == "/en" ? "en" : "de";
 
 // get data from sanity
-const query = groq`*[_type == "project"]{
+const query = groq`*[_type == "project" && language == $locale]{
   title,
   description,
   tags,
   external,
+  language,
   "imageSmall": imagepreview.asset->url,
   "imageUrl": image.asset->url
 }`;
-const { data } = useSanityQuery(query);
+const { data } = useSanityQuery(query, {
+  locale: locale,
+});
 
 const showDetails = (index) => {
   showProjectOverview.value = false;

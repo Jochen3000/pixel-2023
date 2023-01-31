@@ -2683,10 +2683,6 @@ figcaption {
     padding-left: 0px;
   }
 
-  .navidesktop {
-    display: none;
-  }
-
   .modalbackground {
     position: fixed;
     left: 0%;

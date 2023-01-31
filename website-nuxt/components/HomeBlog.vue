@@ -2,7 +2,7 @@
   <div class="strapline">blog</div>
   <h2 class="center" v-if="$route.path === '/en'">Latest articles</h2>
   <h2 class="center" v-else>Die neuesten Artikel</h2>
-  <div class="collection-list-wrapper w-dyn-list">
+  <div v-if="data" class="collection-list-wrapper w-dyn-list">
     <div role="list" class="collection-list w-dyn-items">
       <div
         v-for="post in data?.slice(0, 1)"
@@ -11,7 +11,7 @@
         class="collection-item w-dyn-item"
       >
         <NuxtLink
-          :to="`/blog/${post.slug.current}`"
+          :to="`${locale}/blog/${post.slug.current}`"
           class="teaserlinkblock w-inline-block"
         >
           <div
@@ -51,9 +51,9 @@
       </div>
     </div>
   </div>
-  <div class="teaserblockcontainer">
+  <div v-if="data" class="teaserblockcontainer">
     <div v-for="post in data.slice(1, 3)" class="smallteaser">
-      <NuxtLink :to="`/blog/${post.slug.current}`">
+      <NuxtLink :to="`${locale}/blog/${post.slug.current}`">
         <div class="teaserheadline"></div>
         <h3 class="h3-small-teaser">
           {{ post.title }}
@@ -79,15 +79,22 @@
 
 <script setup>
 const config = useRuntimeConfig();
-const route = useRoute();
 
-const query = groq`*[_type == 'post']{
+// get path and locale
+const route = useRoute();
+const locale = route.path == "/en" ? "en" : "de";
+
+// fetch data
+const query = groq`*[_type == 'post' && language == $locale]{
   title,
   teaser,
   category,
   slug,
+  language,
   id,
   "imageUrl": image.asset->url
 }`;
-const { data } = useSanityQuery(query);
+const { data } = useSanityQuery(query, {
+  locale: locale,
+});
 </script>
