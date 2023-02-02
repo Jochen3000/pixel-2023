@@ -17,7 +17,7 @@
 
       <div class="logocontainer">
         <img
-          src="images/css.svg"
+          src="/images/css.svg"
           loading="lazy"
           width="39"
           height="39"
@@ -25,7 +25,7 @@
           id="w-node-c865196d-201f-73df-3ae8-141e50677c4f-8bb3785f"
           class="toollogo"
         /><img
-          src="images/js.svg"
+          src="/images/js.svg"
           loading="lazy"
           width="39"
           height="39"
@@ -33,7 +33,7 @@
           id="w-node-ea48d21a-38a2-6012-7816-a397ee901b9b-8bb3785f"
           class="toollogo"
         /><img
-          src="images/webflow-icon.svg"
+          src="/images/webflow-icon.svg"
           loading="lazy"
           width="39"
           height="39"
@@ -41,7 +41,7 @@
           id="w-node-_8938c8f4-de15-1422-0b9d-1ab6db5a92ef-8bb3785f"
           class="toollogo"
         /><img
-          src="images/WordPress.com-Logo.wine-round-1.svg"
+          src="/images/WordPress.com-Logo.wine-round-1.svg"
           loading="lazy"
           width="45"
           height="36"
@@ -49,7 +49,7 @@
           id="w-node-_099ddf42-e2e4-9ec0-2acf-72e1e2a64b55-8bb3785f"
           class="toollogo squarespace"
         /><img
-          src="images/oxygen-small-1.svg"
+          src="/images/oxygen-small-1.svg"
           loading="lazy"
           width="21"
           height="41"
@@ -57,7 +57,7 @@
           id="w-node-_2bdfde8a-4197-9c70-f3ee-f0d178bdf39b-8bb3785f"
           class="toollogo"
         /><img
-          src="images/bubble-logo.svg"
+          src="/images/bubble-logo.svg"
           loading="lazy"
           width="36"
           height="39"
