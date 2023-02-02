@@ -6,7 +6,7 @@
   <div class="projectsblockcontainer">
     <div class="projectsdisplay">
       <div class="browser-bar" v-on:click="showOverview">
-        <img src="images/light.svg" loading="lazy" alt="" class="safari" />
+        <img src="/images/light.svg" loading="lazy" alt="" class="safari" />
       </div>
       <div class="screencontainer">
         <div :class="{ screenstartpage: showProjectOverview }">
