@@ -138,7 +138,7 @@
                       alt=""
                       class="arrow-shadow"
                     /><img
-                      src="images/speech-bar-green.svg"
+                      src="/images/speech-bar-green.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img"
@@ -162,12 +162,12 @@
                   </div>
                   <div class="arrow-container-user">
                     <img
-                      src="images/speech-shadow-left.svg"
+                      src="/images/speech-shadow-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow-user"
                     /><img
-                      src="images/speech-left.svg"
+                      src="/images/speech-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img-user"
@@ -182,7 +182,7 @@
                     <div class="message-time-status">
                       <div class="message-time">{{ currentTime() }}</div>
                       <img
-                        src="images/whatsapp-message-ok.svg"
+                        src="/images/whatsapp-message-ok.svg"
                         loading="lazy"
                         alt=""
                         class="message-status"
@@ -191,12 +191,12 @@
                   </div>
                   <div class="arrow-container">
                     <img
-                      src="images/speech-shadow.svg"
+                      src="/images/speech-shadow.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow"
                     /><img
-                      src="images/speech-bar-green.svg"
+                      src="/images/speech-bar-green.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img"
@@ -220,12 +220,12 @@
                   </div>
                   <div class="arrow-container-user">
                     <img
-                      src="images/speech-shadow-left.svg"
+                      src="/images/speech-shadow-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow-user"
                     /><img
-                      src="images/speech-left.svg"
+                      src="/images/speech-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img-user"
@@ -240,7 +240,7 @@
                     <div class="message-time-status">
                       <div class="message-time">{{ currentTime() }}</div>
                       <img
-                        src="images/whatsapp-message-ok.svg"
+                        src="/images/whatsapp-message-ok.svg"
                         loading="lazy"
                         alt=""
                         class="message-status"
@@ -249,12 +249,12 @@
                   </div>
                   <div class="arrow-container">
                     <img
-                      src="images/speech-shadow.svg"
+                      src="/images/speech-shadow.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow"
                     /><img
-                      src="images/speech-bar-green.svg"
+                      src="/images/speech-bar-green.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img"
