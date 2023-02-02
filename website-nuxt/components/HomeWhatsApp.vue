@@ -62,8 +62,14 @@
               <div class="message-computer">
                 <div class="message-comp-inner">
                   <div class="message-container-incoming appear">
-                    <div class="message-incoming-content">
+                    <div
+                      class="message-incoming-content"
+                      v-if="$route.path === '/en'"
+                    >
                       Hi 👋 are you interested in a collaboration?
+                    </div>
+                    <div class="message-incoming-content" v-else>
+                      Hi 👋 hast Du Interesse an einer Zusammenarbeit?
                     </div>
                     <div class="message-time">{{ currentTime() }}</div>
                   </div>
@@ -85,8 +91,14 @@
               <div class="message-computer">
                 <div class="message-comp-inner">
                   <div class="message-container-incoming">
-                    <div class="message-incoming-content">
+                    <div
+                      class="message-incoming-content"
+                      v-if="$route.path === '/en'"
+                    >
                       What is your name?
+                    </div>
+                    <div class="message-incoming-content" v-else>
+                      Wie heisst Du?
                     </div>
                     <div class="message-time">{{ currentTime() }}</div>
                   </div>
@@ -137,7 +149,15 @@
               <div class="message-computer">
                 <div class="message-comp-inner">
                   <div class="message-container-incoming">
-                    <div class="message-incoming-content">How can I help?</div>
+                    <div
+                      class="message-incoming-content"
+                      v-if="$route.path === '/en'"
+                    >
+                      How can I help?
+                    </div>
+                    <div class="message-incoming-content" v-else>
+                      Wie kann ich helfen?
+                    </div>
                     <div class="message-time">{{ currentTime() }}</div>
                   </div>
                   <div class="arrow-container-user">
@@ -187,8 +207,14 @@
               <div class="message-computer">
                 <div class="message-comp-inner">
                   <div class="message-container-incoming">
-                    <div class="message-incoming-content">
+                    <div
+                      class="message-incoming-content"
+                      v-if="$route.path === '/en'"
+                    >
                       Cool 🙂 How can I reach you?
+                    </div>
+                    <div class="message-incoming-content" v-else>
+                      Cool 🙂 Wie kann ich Dich erreichen?
                     </div>
                     <div class="message-time">{{ currentTime() }}</div>
                   </div>
@@ -239,8 +265,14 @@
               <div class="message-computer">
                 <div class="message-comp-inner">
                   <div class="message-container-incoming">
-                    <div class="message-incoming-content">
-                      Danke, ich melde mich!
+                    <div
+                      class="message-incoming-content"
+                      v-if="$route.path === '/en'"
+                    >
+                      Thanks, I'll get in touch!
+                    </div>
+                    <div class="message-incoming-content" v-else>
+                      Danke ich melde mich!
                     </div>
                     <div class="message-time">{{ currentTime() }}</div>
                   </div>
