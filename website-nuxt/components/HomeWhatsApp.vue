@@ -32,7 +32,7 @@
             </div>
             <div class="signal-battery">
               <img
-                src="images/phone-battery-status.svg"
+                src="/images/phone-battery-status.svg"
                 loading="lazy"
                 alt=""
                 class="phone-status-img"
@@ -42,7 +42,7 @@
           <div class="whatsapp-top">
             <div class="profile-img">
               <img
-                src="images/jochen-profile-rund-2x.png"
+                src="/images/jochen-profile-rund-2x.png"
                 loading="lazy"
                 alt="profile image"
                 height="36"
@@ -75,12 +75,12 @@
                   </div>
                   <div class="arrow-container-user">
                     <img
-                      src="images/speech-shadow-left.svg"
+                      src="/images/speech-shadow-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow-user"
                     /><img
-                      src="images/speech-left.svg"
+                      src="/images/speech-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img-user"
@@ -104,12 +104,12 @@
                   </div>
                   <div class="arrow-container-user">
                     <img
-                      src="images/speech-shadow-left.svg"
+                      src="/images/speech-shadow-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow-user"
                     /><img
-                      src="images/speech-left.svg"
+                      src="/images/speech-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img-user"
@@ -124,7 +124,7 @@
                     <div class="message-time-status">
                       <div class="message-time">{{ currentTime() }}</div>
                       <img
-                        src="images/whatsapp-message-ok.svg"
+                        src="/images/whatsapp-message-ok.svg"
                         loading="lazy"
                         alt=""
                         class="message-status"
@@ -133,7 +133,7 @@
                   </div>
                   <div class="arrow-container">
                     <img
-                      src="images/speech-shadow.svg"
+                      src="/images/speech-shadow.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow"
@@ -278,12 +278,12 @@
                   </div>
                   <div class="arrow-container-user">
                     <img
-                      src="images/speech-shadow-left.svg"
+                      src="/images/speech-shadow-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-shadow-user"
                     /><img
-                      src="images/speech-left.svg"
+                      src="/images/speech-left.svg"
                       loading="lazy"
                       alt=""
                       class="arrow-img-user"
@@ -335,7 +335,7 @@
                       alt="whatsapp submit button"
                       width="24"
                       height="24"
-                      src="images/button-whatsapp.svg"
+                      src="/images/button-whatsapp.svg"
                       loading="lazy"
                       class="submit-arrow-button"
                     />

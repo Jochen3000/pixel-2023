@@ -27,7 +27,7 @@
               <div class="div-block">
                 <div class="teaser-text-link">Artikel lesen</div>
                 <img
-                  src="images/arrow-full-right.svg"
+                  src="/images/arrow-full-right.svg"
                   loading="lazy"
                   width="14"
                   height="14"
@@ -64,7 +64,7 @@
         <div class="teaser-small-more">
           <div class="teaser-text-link">Read article</div>
           <img
-            src="images/arrow-full-right.svg"
+            src="/images/arrow-full-right.svg"
             loading="lazy"
             width="14"
             height="14"
