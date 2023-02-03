@@ -322,7 +322,7 @@ figcaption {
   position: static;
   display: -ms-grid;
   display: grid;
-  max-width: 1440px;
+  max-width: 1340px;
   margin-right: auto;
   margin-left: auto;
   padding: 80px 70px 60px;
@@ -672,6 +672,7 @@ figcaption {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+  background: white;
   height: 100%;
   margin-bottom: 60px;
   padding: 20px 20px 20px 24px;
@@ -691,7 +692,7 @@ figcaption {
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
-  border: 1px solid #62668a;
+  border: 1px solid #eeeef0;
   border-radius: 20px;
   box-shadow: 0 10px 20px 0 rgba(0, 184, 236, 0.05);
 }
@@ -1094,6 +1095,7 @@ figcaption {
 
 .collection-list-wrapper {
   padding-bottom: 0px;
+  margin-top: 40px;
 }
 
 .utility-page-wrap {
@@ -1258,6 +1260,7 @@ figcaption {
   font-family: 'Montserrat local', sans-serif;
   color: #00b8ec;
   font-size: 20px;
+  font-weight: 500;
 }
 
 .headerinner {
@@ -1852,6 +1855,7 @@ figcaption {
   cursor: pointer;
   margin-bottom: 32px;
   width: 31%;
+  min-width: 120px;
 }
 
 .favouriteproject img {
@@ -2515,10 +2519,6 @@ figcaption {
   grid-template-rows: auto;
 }
 
-.para-teaser-small {
-  margin-bottom: 0px;
-}
-
 .teaser-small-more {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2673,14 +2673,10 @@ figcaption {
     justify-items: center;
   }
 
-  .paragraph {
-    text-align: center;
-  }
-
   .headerinner {
     height: 70px;
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .modalbackground {

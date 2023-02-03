@@ -49,19 +49,19 @@
           id="w-node-_099ddf42-e2e4-9ec0-2acf-72e1e2a64b55-8bb3785f"
           class="toollogo squarespace"
         /><img
-          src="/images/oxygen-small-1.svg"
+          src="/images/react.svg"
           loading="lazy"
           width="21"
           height="41"
-          alt="Logo Oxygen"
+          alt="Logo React"
           id="w-node-_2bdfde8a-4197-9c70-f3ee-f0d178bdf39b-8bb3785f"
           class="toollogo"
         /><img
-          src="/images/bubble-logo.svg"
+          src="/images/vuejs.svg"
           loading="lazy"
           width="36"
           height="39"
-          alt="Logo .bubble"
+          alt="Logo Vue.js"
           id="w-node-e7fc8a39-6fb9-6b44-1e08-71f2195cdd47-8bb3785f"
           class="toollogo"
         />

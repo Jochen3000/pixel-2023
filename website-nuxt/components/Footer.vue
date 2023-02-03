@@ -34,8 +34,10 @@
       </div>
       <div class="footerinfoblock">
         <div class="footerinfo">
-          Copyright © 2022 -
-          <a href="#" class="footerinfo">Powered by Webflow & Nuxt.js</a>
+          Copyright © 2023 -
+          <a href="#" class="footerinfo"
+            >Powered by Webflow, Nuxt.js and Sanity</a
+          >
         </div>
       </div>
     </div>
