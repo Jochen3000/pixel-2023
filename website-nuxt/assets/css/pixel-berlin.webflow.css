@@ -673,7 +673,6 @@ figcaption {
   display: flex;
   overflow: hidden;
   background: white;
-  height: 100%;
   margin-bottom: 60px;
   padding: 20px 20px 20px 24px;
   -webkit-box-orient: vertical;
@@ -708,7 +707,6 @@ figcaption {
   grid-auto-columns: 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
 }
 
