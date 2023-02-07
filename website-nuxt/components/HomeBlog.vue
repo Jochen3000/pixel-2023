@@ -25,10 +25,12 @@
                 {{ post.teaser }}
               </p>
               <div class="div-block">
-                <div class="teaser-text-link">Artikel lesen</div>
+                <div class="teaser-text-link" v-if="$route.path === '/en'">
+                  Read article
+                </div>
+                <div class="teaser-text-link" v-else>Artikel lesen</div>
                 <img
                   src="/images/arrow-full-right.svg"
-                  loading="lazy"
                   width="14"
                   height="14"
                   alt="arrow right"
@@ -85,12 +87,13 @@ const route = useRoute();
 const locale = route.path == "/en" ? "en" : "de";
 
 // fetch data
-const query = groq`*[_type == 'post' && language == $locale]{
+const query = groq`*[_type == 'post' && language == $locale]| order(publishedAt desc){
   title,
   teaser,
   category,
   slug,
   language,
+  publishedAt,
   id,
   "imageUrl": image.asset->url
 }`;
