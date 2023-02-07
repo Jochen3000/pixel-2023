@@ -52,9 +52,6 @@ const post = {
                     type: 'block'
                 },
                 {
-                    type: 'image'
-                },
-                {
                     type: 'pictureTitled'
                 },
             ]
