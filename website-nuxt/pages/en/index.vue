@@ -6,7 +6,7 @@
         <HomeBlog />
         <div id="projects" class="projectsblock">
           <ProjectsHome />
-          <HomeWhatsApp />
+          <HomeWhatsAppEN />
         </div>
       </div>
     </div>

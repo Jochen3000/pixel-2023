@@ -1,4 +1,5 @@
 <template>
+  <!-- Trying a duplication hack to make netlify forms work with i18n -->
   <div class="contact-block">
     <div class="strapline" v-if="$route.path === '/en'">contact</div>
     <div class="strapline" v-else>Kontakt</div>
@@ -298,7 +299,7 @@
             <div class="message-box">
               <div class="form-block w-form">
                 <form
-                  name="contact-de"
+                  name="contact-en"
                   method="POST"
                   data-netlify="true"
                   class="whatsapp-form"
