@@ -294,7 +294,7 @@
             </div>
           </div>
           <!-- netlify form -->
-          <div class="whatsapp-bottom" v-if="$route.path === '/en'">
+          <div class="whatsapp-bottom">
             <div class="message-box">
               <div class="form-block w-form">
                 <form
