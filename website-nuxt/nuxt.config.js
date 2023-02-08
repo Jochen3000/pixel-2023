@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Pixel Berlin",
+      link: [{ rel: 'icon', type: 'image/png', href: '/images/favicon.png' }]
     },
   },
 });
