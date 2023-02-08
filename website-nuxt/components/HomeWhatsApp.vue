@@ -297,7 +297,7 @@
             <div class="message-box">
               <div class="form-block w-form">
                 <form
-                  :name="formID()"
+                  name="form"
                   method="POST"
                   data-netlify="true"
                   class="whatsapp-form"
