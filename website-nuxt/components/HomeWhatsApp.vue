@@ -297,10 +297,9 @@
             <div class="message-box">
               <div class="form-block w-form">
                 <form
-                  id="wf-form-Name"
-                  name="wf-form-Name"
-                  data-name="Name"
-                  method="get"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
                   class="whatsapp-form"
                 >
                   <div class="message-send">
@@ -312,7 +311,7 @@
                       data-name="Name"
                       placeholder=""
                       id="name"
-                      required="false"
+                      required=""
                     /><input
                       type="text"
                       class="text-entry-message w-input"
@@ -321,7 +320,7 @@
                       data-name="message"
                       placeholder=""
                       id="message-2"
-                      required="false"
+                      required=""
                     /><input
                       type="text"
                       class="text-entry-contact w-input"
@@ -330,12 +329,12 @@
                       data-name="contact"
                       placeholder=""
                       id="contact-2"
-                      required="false"
+                      required=""
                     /><img
                       alt="whatsapp submit button"
                       width="24"
                       height="24"
-                      src="/images/button-whatsapp.svg"
+                      src="images/button-whatsapp.svg"
                       loading="lazy"
                       class="submit-arrow-button"
                     />
