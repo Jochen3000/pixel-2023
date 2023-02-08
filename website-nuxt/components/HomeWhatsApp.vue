@@ -297,59 +297,7 @@
             <div class="message-box">
               <div class="form-block w-form">
                 <form
-                  v-if="$route.path === '/en'"
-                  name="contact-en"
-                  method="POST"
-                  data-netlify="true"
-                  class="whatsapp-form"
-                >
-                  <div class="message-send">
-                    <input
-                      type="text"
-                      class="text-entry-name w-input"
-                      maxlength="200"
-                      name="Name"
-                      data-name="Name"
-                      placeholder=""
-                      id="name"
-                      required=""
-                    /><input
-                      type="text"
-                      class="text-entry-message w-input"
-                      maxlength="200"
-                      name="message"
-                      data-name="message"
-                      placeholder=""
-                      id="message-2"
-                      required=""
-                    /><input
-                      type="text"
-                      class="text-entry-contact w-input"
-                      maxlength="200"
-                      name="contact"
-                      data-name="contact"
-                      placeholder=""
-                      id="contact-2"
-                      required=""
-                    /><img
-                      alt="whatsapp submit button"
-                      width="24"
-                      height="24"
-                      src="/images/button-whatsapp.svg"
-                      loading="lazy"
-                      class="submit-arrow-button"
-                    />
-                  </div>
-                  <input
-                    type="submit"
-                    data-wait=""
-                    value="submit"
-                    class="submit-button w-button"
-                  />
-                </form>
-                <form
-                  v-else
-                  name="contact-de"
+                  :name="formID()"
                   method="POST"
                   data-netlify="true"
                   class="whatsapp-form"
@@ -426,6 +374,14 @@ function currentTime() {
   let minutes = d.getMinutes();
   let minutesString = minutes <= 9 ? `0${minutes}` : `${minutes}`;
   return `${hours}:${minutesString}`;
+}
+
+function formID() {
+  if (route.path === "/en") {
+    return "form-en";
+  } else {
+    return "form-de";
+  }
 }
 
 onMounted(() => {
