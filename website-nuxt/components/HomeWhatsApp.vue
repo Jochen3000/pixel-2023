@@ -334,7 +334,7 @@
                       alt="whatsapp submit button"
                       width="24"
                       height="24"
-                      src="images/button-whatsapp.svg"
+                      src="/images/button-whatsapp.svg"
                       loading="lazy"
                       class="submit-arrow-button"
                     />
