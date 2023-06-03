@@ -11,7 +11,7 @@
           </p>
           <p>Umsatzsteuer ID:&nbsp;58 349 705 618</p>
           <h3>Kontakt</h3>
-          <p>E-Mail: info@pixel.berlin<br />Website: pixel.berlin</p>
+          <p>E-Mail: jochen@sitepositive.org<br />Website: pixel.berlin</p>
           <h3>Redaktionelle Inhalte</h3>
           <p>
             Verantwortlich nach § 55 Abs.2 RStV<br />Jochen Ade<br />Arndtstr.
