@@ -21,15 +21,14 @@
           loading="lazy"
           width="39"
           height="39"
-          alt="Logo WordPress"
-          id="w-node-c865196d-201f-73df-3ae8-141e50677c4f-8bb3785f"
+          alt="Logo Python"
           class="toollogo"
         /><img
           src="/images/js.svg"
           loading="lazy"
           width="39"
           height="39"
-          alt="Logo Elementor"
+          alt="Logo JS"
           id="w-node-ea48d21a-38a2-6012-7816-a397ee901b9b-8bb3785f"
           class="toollogo"
         /><img
@@ -38,23 +37,20 @@
           width="39"
           height="39"
           alt="Logo Webflow"
-          id="w-node-_8938c8f4-de15-1422-0b9d-1ab6db5a92ef-8bb3785f"
           class="toollogo"
         /><img
-          src="/images/WordPress.com-Logo.wine-round-1.svg"
+          src="/images/python_icon.svg"
           loading="lazy"
           width="45"
           height="36"
-          alt="Logo Squarespace"
-          id="w-node-_099ddf42-e2e4-9ec0-2acf-72e1e2a64b55-8bb3785f"
-          class="toollogo squarespace"
+          alt="Logo Python"
+          class="toollogo"
         /><img
           src="/images/react.svg"
           loading="lazy"
           width="21"
           height="41"
           alt="Logo React"
-          id="w-node-_2bdfde8a-4197-9c70-f3ee-f0d178bdf39b-8bb3785f"
           class="toollogo"
         /><img
           src="/images/vuejs.svg"
@@ -62,7 +58,6 @@
           width="36"
           height="39"
           alt="Logo Vue.js"
-          id="w-node-e7fc8a39-6fb9-6b44-1e08-71f2195cdd47-8bb3785f"
           class="toollogo"
         />
       </div>
