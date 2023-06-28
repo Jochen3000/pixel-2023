@@ -21,6 +21,16 @@
           height="32"
           alt="Twitter"
       /></a>
+      <a
+        href="https://github.com/Jochen3000"
+        class="footersociallink darkblueshadow w-inline-block"
+        ><img
+          src="/images/github-round.png"
+          loading="lazy"
+          width="32"
+          height="32"
+          alt="Github"
+      /></a>
     </div>
     <div class="footermetablock">
       <div class="footerlinkblock">

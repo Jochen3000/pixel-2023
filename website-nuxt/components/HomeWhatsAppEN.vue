@@ -10,19 +10,17 @@
         <p>
           👋 Hello, I&#x27;m Jochen Ade<br />👀 I develop prototypes, digital
           products and web applications. <br />🌱 I use different technologies
-          like HTML5, CSS/SASS, Javascript, JS Frameworks (React, Next.js) and
-          tools like Figma, Wordpress, Make, Bubble, and Webflow.<br />💞️ I
-          would be happy to speak about your project or idea.<br />📫 Please use
-          my chat application to get in touch 👉
+          like React, Python and tools like Figma and Webflow.<br />💞️ I would
+          be happy to speak about your project or idea.<br />📫 Please use my
+          chat application to get in touch 👉
         </p>
       </div>
       <div class="about" v-else>
         <p>
           👋 Hallo, ich bin Jochen Ade 👀 Ich entwickle Prototypen, Websites und
-          Apps. 🌱 Dabei nutze ich unterschiedliche Technologien wie HTML/CSS,
-          JS, React, Vue.js und Tools wie Figma, Wordpress und Webflow. 💞️ Über
-          eine Kontaktaufnahme würde ich mich freuen! 📫 Bitte meine Chat
-          Applikation benutzen 👉
+          Apps. 🌱 Dabei nutze ich unterschiedliche Technologien wie React,
+          Vue.js und Tools wie Figma und Webflow. 💞️ Über eine Kontaktaufnahme
+          würde ich mich freuen! 📫 Bitte meine Chat Applikation benutzen 👉
         </p>
       </div>
       <div class="whatsapp-container">
