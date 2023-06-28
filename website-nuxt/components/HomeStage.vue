@@ -10,7 +10,7 @@
         a focus on user experience.
       </p>
       <p class="paragraph" v-else>
-        Die pixel.berlin Werkstatt für Web-Entwicklung ist die richtige
+        Die pixel.berlin Werkstatt für App-Entwicklung ist die richtige
         Anlaufstelle für professionelle Anwendungen, bei denen das
         Benutzererlebnis immer im Vordergrund steht.
       </p>
@@ -39,7 +39,7 @@
           alt="Logo Webflow"
           class="toollogo"
         /><img
-          src="/images/python_icon.svg"
+          src="/images/python-logo.svg"
           loading="lazy"
           width="45"
           height="36"
